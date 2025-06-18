@@ -64,5 +64,27 @@ Proyek ini adalah sistem pengelolaan kost yang bertujuan untuk menyederhanakan t
 * **Version Control:**
     * [Git](https://git-scm.com/)
     * [GitHub](https://github.com/)
+## Persyaratan Sistem
+* Python 3.8+
+* pip (biasanya sudah terinstal dengan Python)
+* Lingkungan virtual (venv disarankan)
+* Git
 
-## Struktur Proyek
+## Langkah-Langkah Instalasi dan Menjalankan Proyek
+
+### 1. Clone Repositori (Jika Anda Mengunduh dari GitHub)
+Jika Anda mengunduh proyek ini dari GitHub, buka terminal Anda dan clone repositori ini:
+```bash
+git clone [https://github.com/faiz140405/kost-management.git](https://github.com/faiz140405/kost-management.git) # Ganti dengan URL repositori Anda jika berbeda
+cd kost-management # Masuk ke direktori proyek
+
+python -m venv venv_kost
+# Untuk Windows:
+.\venv_kost\Scripts\activate
+# Untuk macOS/Linux:
+source venv_kost/bin/activate
+
+pip freeze > requirements.txt
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
