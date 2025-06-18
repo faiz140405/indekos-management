@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Kost: {{ kost.nama }}</title>
+</head>
+<body>
+    <h1>{{ kost.nama }}</h1>
+    <p><strong>Alamat:</strong> {{ kost.alamat }}</p>
+    <p><strong>Deskripsi:</strong> {{ kost.deskripsi|default:"Tidak ada deskripsi." }}</p>
+    <h2>Daftar Kamar</h2>
+    <ul>
+        {% for kamar in kamar_list %}
+            <li>
+                <strong>Nomor Kamar:</strong> {{ kamar.nomor_kamar }}<br>
+                <strong>Tipe:</strong> {{ kamar.tipe_kamar }}<br>
+                <strong>Harga:</strong> Rp{{ kamar.harga_sewa }}<br>
+                <strong>Status:</strong> {% if kamar.is_tersedia %}Tersedia{% else %}Terisi{% endif %}
+            </li>
+        {% empty %}
+            <li>Belum ada kamar untuk kost ini.</li>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'kost:daftar_kost' %}">Kembali ke Daftar Kost</a></p>
+</body>
+</html>

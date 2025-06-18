@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Sewa Kost Idaman Anda!{% endblock %}
+
+{% block content %}
+    <div class="p-5 mb-4 bg-light rounded-3 text-center" style="background-image: url('{% static 'img/kost_hero.jpg' %}'); background-size: cover; background-position: center; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">
+        <div class="container-fluid py-5">
+            <h1 class="display-4 fw-bold">Temukan Kost Impianmu Sekarang!</h1>
+            <p class="col-md-8 fs-4 mx-auto">Pilihan kost terbaik di berbagai lokasi, nyaman, dan terjangkau.</p>
+            <a href="{% url 'kost:daftar_kost' %}" class="btn btn-primary btn-lg mt-3">Cari Kost Sekarang</a>
+        </div>
+    </div>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Kenapa Memilih Kami?</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 shadow-sm text-center">
+                        <div class="card-body">
+                            <i class="bi bi-building fs-1 text-primary mb-3 d-block"></i> {# Contoh ikon, perlu Font Awesome atau Bootstrap Icons #}
+                            <h5 class="card-title">Pilihan Terlengkap</h5>
+                            <p class="card-text">Ribuan pilihan kost dari berbagai tipe dan lokasi strategis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm text-center">
+                        <div class="card-body">
+                            <i class="bi bi-hand-thumbs-up fs-1 text-success mb-3 d-block"></i>
+                            <h5 class="card-title">Proses Mudah</h5>
+                            <p class="card-text">Temukan dan sewa kost hanya dalam beberapa langkah mudah.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm text-center">
+                        <div class="card-body">
+                            <i class="bi bi-wallet-fill fs-1 text-info mb-3 d-block"></i>
+                            <h5 class="card-title">Harga Terbaik</h5>
+                            <p class="card-text">Temukan penawaran kost dengan harga kompetitif dan transparan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}
+
+{% block head_extra %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+{% endblock %}

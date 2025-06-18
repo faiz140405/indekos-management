@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Daftar Kost - Pengelolaan Kost{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Daftar Kost</h1>
+
+<div class="row mb-5">
+    <div class="col-md-6 offset-md-3"> {# Mengatur grafik di tengah #}
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h5 class="card-title">Ringkasan Ketersediaan Kamar</h5>
+                <p class="card-text">Total Kamar: {{ total_rooms }}</p>
+                <p class="card-text">Kamar Tersedia: <span class="badge bg-success">{{ total_available_rooms }}</span></p>
+                <p class="card-text">Kamar Terisi: <span class="badge bg-warning text-dark">{{ total_occupied_rooms }}</span></p>
+
+                {% if plot_base64 %}
+                <div class="mt-4">
+                    <img src="data:image/png;base64,{{ plot_base64 }}" alt="Statistik Ketersediaan Kamar" class="img-fluid">
+                </div>
+                {% else %}
+                <div class="alert alert-warning mt-4" role="alert">
+                    Grafik statistik tidak dapat dimuat.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    {% for kost in daftar_kost %}
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ kost.nama }}</h5>
+                    <p class="card-text text-muted">{{ kost.alamat }}</p>
+                    <p class="card-text">Jumlah Kamar: {{ kost.jumlah_kamar }}</p>
+                    <p class="card-text">{{ kost.deskripsi|default:"Tidak ada deskripsi."|truncatechars:100 }}</p>
+                    <a href="{% url 'kost:detail_kost' kost.id %}" class="btn btn-primary">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+    {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info" role="alert">
+                Belum ada data kost.
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<p class="mt-4">
+    <a href="/admin/kost/kost/add/" class="btn btn-success">Tambahkan Kost Baru (via Admin)</a>
+</p>
+{% endblock %}

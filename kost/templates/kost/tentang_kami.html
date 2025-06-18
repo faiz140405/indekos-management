@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Tentang Kami - Kost Management{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4 display-4 fw-bold text-primary">Tentang Kami</h1>
+    <hr class="mb-5">
+
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+            <img src="{% static 'images/tim.jpg' %}" alt="Tim Kostify" class="img-fluid rounded shadow-lg">
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+            <p class="lead">
+                Kami adalah platform pengelolaan kost yang berdedikasi untuk menyederhanakan proses pencarian dan manajemen hunian bagi pemilik kost dan penyewa. Dengan teknologi modern, kami hadir untuk menjembatani kebutuhan antara penyedia dan pencari kost.
+            </p>
+            <p>
+                Didirikan pada tahun 2024, Kostify (Nama Aplikasi Anda) berawal dari visi untuk menciptakan ekosistem kost yang transparan, efisien, dan nyaman. Kami memahami tantangan yang dihadapi pemilik kost dalam mengelola properti mereka, serta kesulitan penyewa dalam menemukan hunian yang sesuai. Oleh karena itu, kami membangun solusi komprehensif ini.
+            </p>
+        </div>
+    </div>
+
+    <h2 class="text-center mb-4 text-secondary">Visi & Misi Kami</h2>
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-success mb-3"><i class="bi bi-eye-fill me-2"></i>Visi</h5>
+                    <p class="card-text text-center">Menjadi platform pengelolaan kost terkemuka yang memberdayakan pemilik kost dan memberikan pengalaman hunian terbaik bagi penyewa di seluruh Indonesia.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100 border-0">
+                <div class="card-body">
+                    <h5 class="card-title text-center text-info mb-3"><i class="bi bi-bullseye me-2"></i>Misi</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Menyediakan alat pengelolaan kost yang inovatif dan mudah digunakan.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Meningkatkan visibilitas dan jangkauan properti kost.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Memberikan informasi yang akurat dan transparan bagi pencari kost.</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Membangun komunitas yang saling mendukung antara pemilik dan penyewa.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <p class="lead">Siap untuk mulai mengelola kost Anda dengan lebih mudah?</p>
+        <a href="{% url 'kost:daftar_kost' %}" class="btn btn-primary btn-lg">Lihat Daftar Kost Kami</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block head_extra %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+{% endblock %}

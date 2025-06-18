@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.iml
+
+# Environments
+.env
+.venv
+env/
+venv/
+venv_kost/ # Pastikan nama ini sesuai dengan nama lingkungan virtual Anda
+
+# Database
+db.sqlite3
+*.sqlite3
+
+# Media files (jika Anda akan mengupload file oleh user)
+media/
+
+# IDE files
+.vscode/
+.idea/
+
+# Django stuff:
+*.log
+local_settings.py # Jika Anda memisahkan settings sensitif
